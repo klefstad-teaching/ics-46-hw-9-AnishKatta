@@ -41,6 +41,7 @@ vector<int> dijkstra_shortest_path(const Graph& G, int source, vector<int>& prev
 
     //previous vector stores predecessors for each vertex
 }
+
 vector<int> extract_shortest_path(const vector<int>& distances, const vector<int>& previous, int destination){
     std::vector<int> path;
     // int vector = destination;
@@ -65,6 +66,7 @@ void print_path(const vector<int>& v, int total){
     //     std::cout << "no path" << std::endl;
     //     return;
     // }
+    std::cout << "Word ladder found: ";
     for(int vec: v){
         std::cout << vec << " ";
     }

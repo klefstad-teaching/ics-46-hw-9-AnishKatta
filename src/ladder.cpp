@@ -31,9 +31,6 @@ bool edit_distance_within(const std::string& str1, const std::string& str2, int 
          ++y;
         if(str1_length > str2_length){--y;}
         else if(str2_length > str1_length){--x;}
-        // else{
-            
-        // } 
     }
     if(x < str1_length || y < str2_length){
         count += std::abs(str1_length - str2_length);
