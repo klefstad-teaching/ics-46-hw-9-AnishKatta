@@ -1,7 +1,7 @@
 CXX = g++
 CXXFLAGS = -ggdb -std=c++20 -Wall -Wextra -Wfatal-errors -pedantic
 
-all: dijkstras_main
+all: dijkstras_main ladder_main
 
 dijkstras_main: dijkstras_main.cpp dijkstras.o
 	$(CXX) $(CXXFLAGS) dijkstras_main.cpp dijkstras.o -o dijkstras_main
