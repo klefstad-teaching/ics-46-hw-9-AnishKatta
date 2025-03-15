@@ -68,5 +68,6 @@ void print_path(const vector<int>& v, int total){
     for(int vec: v){
         std::cout << vec << " ";
     }
-    std::cout << "total nodes: " << total << std::endl;
+    std::cout << "\n";
+    std::cout << "total distance: " << total << std::endl;
 }

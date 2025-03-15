@@ -7,7 +7,7 @@ void test_dijkstras_small_dest_2(){
     vector<int> previous;
     vector<int> distances = dijkstra_shortest_path(G, 0, previous);
     vector<int> path = extract_shortest_path(distances, previous, 2);
-    print_path(path, path.size());
+    print_path(path, distances[2]);
 }
 
 void test_dijkstras_small_dest_3(){
@@ -16,7 +16,7 @@ void test_dijkstras_small_dest_3(){
     vector<int> previous;
     vector<int> distances = dijkstra_shortest_path(G, 0, previous);
     vector<int> path = extract_shortest_path(distances, previous, 3);
-    print_path(path, path.size());
+    print_path(path, distances[3]);
 }
 
 void test_dijkstras_small_dest_1(){
@@ -25,7 +25,7 @@ void test_dijkstras_small_dest_1(){
     vector<int> previous;
     vector<int> distances = dijkstra_shortest_path(G, 0, previous);
     vector<int> path = extract_shortest_path(distances, previous, 1);
-    print_path(path, path.size());
+    print_path(path, distances[1]);
 }
 
 
