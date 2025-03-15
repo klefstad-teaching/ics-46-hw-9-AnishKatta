@@ -10,7 +10,7 @@ ladder_main:ladder_main.cpp ladder.o dijkstras.o
 	$(CXX) $(CXXFLAGS) ladder_main.cpp ladder.o dijkstras.o -o ladder_main
 
 dijkstras.o: dijkstras.cpp dijkstras.h
-	$(CXX) $(CXXFLAGS) -c dijkstras.cpp dijkstras.o
+	$(CXX) $(CXXFLAGS) -c dijkstras.cpp -o dijkstras.o
 
 ladder.o: ladder.cpp ladder.h
 	$(CXX) $(CXXFLAGS) -c ladder.cpp ladder.o
