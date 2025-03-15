@@ -44,14 +44,12 @@ vector<int> dijkstra_shortest_path(const Graph& G, int source, vector<int>& prev
 
 vector<int> extract_shortest_path(const vector<int>& distances, const vector<int>& previous, int destination){
     std::vector<int> path;
-    // if(distances[destination] == INT_MAX){
-    //     return path;
-    // }
+    std::vector<int> reversedPath;
     while(destination != -1){
-        path.push_back(destination);
+        reversedPath.push_back(destination);
         destination = previous[destination];
     }
-    std::reverse(path.begin(), path.end());
+    path.assign(reversedPath.rbegin(), reversedPath.rend());
     return path;
 
 
