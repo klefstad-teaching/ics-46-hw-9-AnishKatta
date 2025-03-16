@@ -4,6 +4,7 @@
 #include <algorithm>
 #include <cmath>
 #include <set>
+#include <unordered_set>
 
 
 
@@ -14,6 +15,7 @@ void error(string word1, string word2, string msg);
 bool edit_distance_within(const std::string& str1, const std::string& str2, int d){
     int str1_length = str1.length();
     int str2_length = str2.length();
+
     int x = 0;
     int y = 0;
     int count = 0;
@@ -29,13 +31,13 @@ bool edit_distance_within(const std::string& str1, const std::string& str2, int 
         }
          ++x;
          ++y;
-        if(str1_length > str2_length){--y;}
-        else if(str2_length > str1_length){--x;}
+        if(str2_length > str1_length){--x;}
+        else if(str1_length > str2_length){--y;}
     }
     if(x < str1_length || y < str2_length){
         count += std::abs(str1_length - str2_length);
     }
-    if(count <= d){
+    if(count <= 1){
         return true;
     }
     return false;
@@ -47,7 +49,9 @@ bool is_adjacent(const string& word1, const string& word2){
 }
 vector<string> generate_word_ladder(const string& begin_word, const string& end_word, const set<string>& word_list){
     std::queue<std::vector<std::string>> ladder_queue;
-    ladder_queue.push({begin_word});
+    std::vector<std::string> start;
+    start.push_back(begin_word);
+    ladder_queue.push(start);
     std::set<std::string> visited;
     visited.insert(begin_word);
 
